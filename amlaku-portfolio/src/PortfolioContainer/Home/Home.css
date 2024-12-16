@@ -1,0 +1,162 @@
+/* Home.css */
+
+/* Home container styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 806px;
+  background-image: url("../../assets/Home/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px; /* Adjust padding as needed */
+  position: relative; /* Ensure relative positioning for absolute elements */
+}
+
+/* Icon styles */
+.icon {
+  top: 30%;
+  position: absolute;
+  text-align: right;
+  right: 0;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: 240px;
+  z-index: 900;
+}
+
+@media only screen and (min-width: 475px) {
+  .icon {
+      margin-bottom: 10px;
+  }
+}
+
+.icon a {
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 1000;
+  padding: 10px;
+  font-size: 14px;
+  font-family: "oswald", "sans-serif";
+  border-radius: 50px 0px 0px 50px;
+  transform: translate(150px, 0px);
+  transition: all 0.5s;
+  z-index: 900;
+}
+
+.icon a:hover {
+  border: 0.5px solid #ff5823;
+  transform: translate(50px, 0px);
+}
+
+.icon a i {
+  margin-right: 25px;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  color: black;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: all 0.5s;
+  z-index: 900;
+}
+
+.icon a:hover i {
+  transform: rotate(360deg);
+}
+
+.icon a i.fa-facebook-f {
+  color: #2c80d3;
+  border-radius: 2px solid white;
+}
+
+.icon a i.fa-youtube {
+  color: #fa0910;
+}
+
+.icon a i.fa-twitter {
+  color: #2c80d3;
+}
+
+.facebook {
+  background-color: #1f2235;
+  color: white;
+}
+
+.youtube {
+  color: #fa0910;
+}
+
+.twitter {
+  color: #53c5ff;
+}
+
+/* Styled boxes container */
+.styled-boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Styled box styles */
+.styled-box {
+  background-image: linear-gradient(135deg, #39a489, #ff68b8); /* Green-pink gradient */
+  color: #fff; /* White text color */
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth effect */
+  width: 300px; /* Adjust width as needed */
+}
+
+.styled-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1)); /* Gradient overlay */
+  mix-blend-mode: overlay;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.styled-box:hover {
+  transform: translateY(-5px); /* Move box up on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Adjusted shadow on hover */
+}
+
+.styled-box:hover:before {
+  opacity: 0; /* Fade out overlay on hover */
+}
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+  .home-container {
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .styled-boxes-container {
+      margin-top: 10px;
+  }
+
+  .styled-box {
+      font-size: 16px;
+      padding: 15px;
+      width: 100%; /* Full width on smaller screens */
+  }
+}

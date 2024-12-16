@@ -1,0 +1,53 @@
+.scroll-container {
+  position: absolute;
+  text-align: center;
+  right: 0;
+  left: 0; /* Center the content */
+  margin: -45px auto 0; /* Adjust top margin as needed */
+  z-index: 100;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 475px) {
+  .scroll-container {
+    margin-bottom: 10px;
+  }
+}
+
+.btn-scroll {
+  width: 50px;
+  height: 50px;
+  color: aliceblue;
+  font-size: 24px;
+  background-color: tomato;
+  border-radius: 10px;
+  border: none;
+  outline: none; /* Ensure buttons do not have browser default outline */
+}
+
+.btn-scroll i:hover {
+  transform: rotate(360deg);
+  color: aliceblue;
+}
+
+.btn-scroll i {
+  -webkit-animation: mover 0.5s infinite alternate;
+  animation: mover 0.5s infinite alternate;
+}
+
+@keyframes mover {
+  100% {
+    transform: translateY(-5px);
+  }
+  0% {
+    transform: translateX(0px);
+  }
+}
+
+/* Copyright notice */
+.copyright {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 10px;
+  font-weight: bold; /* Make the text bold */
+}
