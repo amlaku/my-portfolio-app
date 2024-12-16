@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
     "amlaku-portfolio": "npm start --prefix amlaku-portfolio",
-    "dev": "concurrently \"npm run  server\" \"npm run amlaku-portfolio\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix amlaku-portfolio && npm run build --prefix amlaku-portfolio",
+    "dev": "concurrently \"npm run server\" \"npm run amlaku-portfolio\"",
     "start": "node server.js",
     "build": "react-scripts build"
   },
