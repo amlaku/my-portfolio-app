@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a966701d.css",
-    "main.js": "/static/js/main.04889755.js",
+    "main.css": "/static/css/main.4aa44d6c.css",
+    "main.js": "/static/js/main.c70b5815.js",
     "static/js/845.0501c27b.chunk.js": "/static/js/845.0501c27b.chunk.js",
     "static/media/Poppins-Thin.ttf": "/static/media/Poppins-Thin.a61eaf4c2e4d44d6db6a.ttf",
     "static/media/Poppins-Light.ttf": "/static/media/Poppins-Light.f41b63c0bb0963ace821.ttf",
@@ -19,12 +19,12 @@
     "static/media/interests.svg": "/static/media/interests.809890a3e4fb0938f61b.svg",
     "static/media/education.svg": "/static/media/education.10cfa28a40119ebd70cf.svg",
     "static/media/work-exprience.svg": "/static/media/work-exprience.a566475dedb99dea4bb8.svg",
-    "main.a966701d.css.map": "/static/css/main.a966701d.css.map",
-    "main.04889755.js.map": "/static/js/main.04889755.js.map",
+    "main.4aa44d6c.css.map": "/static/css/main.4aa44d6c.css.map",
+    "main.c70b5815.js.map": "/static/js/main.c70b5815.js.map",
     "845.0501c27b.chunk.js.map": "/static/js/845.0501c27b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a966701d.css",
-    "static/js/main.04889755.js"
+    "static/css/main.4aa44d6c.css",
+    "static/js/main.c70b5815.js"
   ]
 }
