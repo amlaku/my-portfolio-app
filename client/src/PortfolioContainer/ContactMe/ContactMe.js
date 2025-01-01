@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Typical from "react-typical";
+import ReactTyped from 'react-typical';
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -19,7 +20,8 @@ export default function ContactMe(props) {
     Animations.animations.fadeInScreen(props.id);
   };
 
-  ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  const fadeInSubscription =
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,52 +29,52 @@ export default function ContactMe(props) {
   const [banner, setBanner] = useState("");
   const [bool, setBool] = useState(false);
 
-  const handleName = (e) => setName(e.target.value);
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handleMessage = (e) => setMessage(e.target.value);
-
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+  };
+  console.log(name);
   const submitForm = async (e) => {
     e.preventDefault();
-    if (!name || !email || !message) {
-      setBanner("All fields are required.");
-      toast.error("All fields are required.");
-      return;
-    }
-
     try {
-      let data = { name, email, message };
+      let data = {
+        name,
+        email,
+        message,
+      };
       setBool(true);
+      const res = await axios.post(`/contact`, data);
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        setBanner(res.data.msg);
+        toast.error(res.data.msg);
+        setBool(false);
+      } else if (res.status === 200) {
+        setBanner(res.data.msg);
+        toast.success(res.data.msg);
+        setBool(false);
 
-      // Send the form data to the backend
-      const res = await axios.post("http://localhost:5000/contact", data);
-
-      if (res.status === 200) {
-        setBanner(res.data.msg || "Message sent successfully!");
-        toast.success(res.data.msg || "Message sent successfully!");
         setName("");
         setEmail("");
         setMessage("");
-      } else {
-        setBanner("Something went wrong. Please try again.");
-        toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
-      setBanner("Error sending message. Please try again later.");
-      toast.error("Error sending message. Please try again later.");
-      console.error("Submit Form Error:", error.response || error.message || error);
-    } finally {
-      setBool(false);
+      console.log(error);
     }
   };
 
   return (
     <div className="main-container fade-in" id={props.id || ""}>
-      <ScreenHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
+      <ScreenHeading subHeading={"Lets Keep In Touch"} title={"Contact Me"} />
       <div className="central-form">
         <div className="col">
           <h2 className="title">
             <Typical loop={Infinity} steps={["Get In Touch 📧", 1000]} />
-          </h2>
+          </h2>{" "}
           <a href="https://web.facebook.com/">
             <i className="fa fa-facebook-square" />
           </a>
@@ -92,42 +94,29 @@ export default function ContactMe(props) {
         <div className="back-form">
           <div className="img-back">
             <h4>Send Your Email Here!</h4>
-            <img src={imgBack} alt="Email background" />
+            <img src={imgBack} alt="image not found" />
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              onChange={handleName}
-              value={name}
-              placeholder="Enter your name"
-            />
+            <input type="text" onChange={handleName} value={name} />
 
             <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              onChange={handleEmail}
-              value={email}
-              placeholder="Enter your email"
-            />
+            <input type="email" onChange={handleEmail} value={email} />
 
             <label htmlFor="message">Message</label>
-            <textarea
-              type="text"
-              onChange={handleMessage}
-              value={message}
-              placeholder="Enter your message"
-            />
+            <textarea type="text" onChange={handleMessage} value={message} />
 
             <div className="send-btn">
               <button type="submit">
-                Send
+                send
                 <i className="fa fa-paper-plane" />
-                {bool && (
+                {bool ? (
                   <b className="load">
-                    <img src={load1} alt="Loading animation" />
+                    <img src={load1} alt="image not responding" />
                   </b>
+                ) : (
+                  ""
                 )}
               </button>
             </div>
