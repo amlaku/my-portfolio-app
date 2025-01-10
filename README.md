@@ -14,19 +14,19 @@ Features
  Tech Stack
 
  Front-End
- React.js
- JavaScript
- HTML5
- CSS3
+  -React.js
+  -JavaScript
+  -HTML5
+  -CSS3
 
 Back-End:
-Node.js
-Express.js
+ -Node.js
+ -Express.js
 
 Other Tools:
-Nodemailer: For email functionality.
-RESTful APIs: For dynamic content.
--Git: For version control.
+ -Nodemailer: For email functionality.
+ -RESTful APIs: For dynamic content.
+ -Git: For version control.
 
 How to Run Locally
 
