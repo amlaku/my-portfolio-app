@@ -26,13 +26,16 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "fs": "^0.0.1-security",
     "owl.carousel": "^2.3.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.23.1",
     "react-toastify": "^10.0.5",
     "react-typed": "^2.0.12",
+<<<<<<< HEAD:client/package.json
     "react-typical": "^0.1.3",
+=======
+>>>>>>> 0f21806 (fix commit):amlaku-portfolio/package.json
     "react-typing-effect": "^2.0.5",
     "rxjs": "^7.8.1",
     "style-loader": "^1.3.0",
